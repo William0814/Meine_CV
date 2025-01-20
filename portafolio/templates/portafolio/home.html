@@ -9,7 +9,60 @@
   </head>
   <body>
     <header>
-      <h1>Bienvenidos</h1>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="/static/portafolio/william.jpg" alt="William Rodriguez" class="my_picture">
+          <h1>William Rodriguez</h1>
+        </div>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mi</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
+    <section id="#inicio" class="hero">
+      
+      <div class="hero-content">
+      <h1>Hola, mi nombre es <span>William</span></h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos dolorem
+        quae iste ipsa ratione officiis veritatis quisquam accusantium odio
+        repellendus vero exercitationem, magni est explicabo minima animi dicta
+        aspernatur deleniti.
+      </p>
+      <a href="#sobre-mi">Conoceme</a>
+    </section>
+    <section id="#Sobre-mi">
+      <h2>Sobre mi</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi libero
+        temporibus neque fuga odit eum tempore nobis. Asperiores saepe impedit
+        hic ab accusantium. Nihil explicabo asperiores ipsam praesentium aliquam
+        ullam?
+      </p>
+    </section>
+    <section id="#experiencia">
+      <div class="experiencia-container"></div>
+    </section>
+    <section id="#contacto">
+      <h2>Contacto</h2>
+      <form action="" method="post">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" />
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" name="email" id="email" />
+
+        <label for="mensaje">Mensaje</label>
+        <textarea name="mensaje" id="mensaje"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+    <footer>
+      <p>&copy; 2025, Todos los derechos reservados</p>
+      <p>Desarrollado por Ing. William Rodriguez</p>
+    </footer>
   </body>
 </html>
