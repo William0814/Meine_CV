@@ -16,13 +16,13 @@
         </div>
         <ul>
           <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#sobre-mi">Sobre mi</a></li>
+          <li><a href="#estudios">Estudios</a></li>
           <li><a href="#experiencia">Experiencia</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
     </header>
-    <section id="#inicio" class="hero">
+    <section id="inicio" class="hero">
       
       <div class="hero-content">
       <h1>Hola, mi nombre es <span>William</span></h1>
@@ -32,21 +32,37 @@
         repellendus vero exercitationem, magni est explicabo minima animi dicta
         aspernatur deleniti.
       </p>
-      <a href="#sobre-mi">Conoceme</a>
+      <a href="{% url 'about_me' %}">
+      <button class="button" id="button" >Conoceme</button>
+      </a>
     </section>
-    <section id="#Sobre-mi">
-      <h2>Sobre mi</h2>
+    <section id="estudios" class="studys">
+      <div>
+      <h2>Estudios</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi libero
         temporibus neque fuga odit eum tempore nobis. Asperiores saepe impedit
         hic ab accusantium. Nihil explicabo asperiores ipsam praesentium aliquam
         ullam?
       </p>
+      <a href="{% url 'studies' %}">
+      <button id="button" class="button">Mas info.</button>
+      </a>
+      </div>
     </section>
-    <section id="#experiencia">
-      <div class="experiencia-container"></div>
+    <section id="experiencia" class="experiencie">
+      <h2>Experiencia laboral</h2>
+      <div class="experiencia-container">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident quos 
+        praesentium obcaecati voluptates eius doloribus ut illum enim? Numquam, iusto
+         ad veritatis dignissimos tempora est quasi. Suscipit nam illum natus.
+        </p>
+        <a href="{% url 'experience' %}">
+        <button class="button" id="button">Mas info.</button> <br>
+        </a>
+      </div>
     </section>
-    <section id="#contacto">
+    <section id="contacto">
       <h2>Contacto</h2>
       <form action="" method="post">
         <label for="nombre">Nombre</label>

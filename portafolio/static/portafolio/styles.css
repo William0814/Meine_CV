@@ -10,11 +10,49 @@ a,
 img,
 form,
 input,
-textarea,
-button {
+textarea {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+.button {
+  margin: 0;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  align-items: center;
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  background-color: #fdd835;
+  border: 2px solid #fbc02d;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+.button:hover {
+  background-color: #fbc02d;
+  color: white;
+  box-shadow: 4px 6px 10px;
+  transform: scale(1.05);
+}
+.studys {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.experiencie {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 body {
@@ -22,6 +60,7 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #f9f9f9;
+  align-items: center;
 }
 
 /* Encabezado */
@@ -92,29 +131,23 @@ header {
   font-size: 1.2rem;
 }
 
-.hero a {
-  display: inline-block;
-  padding: 0.7rem 1.5rem;
-  background: #ffd700;
-  color: #004aad;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-.hero a:hover {
-  background: #ffbf00;
-}
-
 /* Sección "Sobre mí" */
 section {
-  padding: 2rem;
+  padding: 50px 20px;
+  margin: 30px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+}
+section:nth-child(odd) {
+  background-color: #fff5e1;
+}
+section:nth-child(even) {
+  background-color: #fff5e1;
 }
 
 section h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
   color: #004aad;
   text-align: center;
 }
@@ -122,8 +155,9 @@ section h2 {
 section p {
   max-width: 800px;
   margin: 0 auto 1rem auto;
-  text-align: center;
+  text-align: justify;
   line-height: 1.8;
+  font-size: 1rem;
 }
 
 /* Formulario de contacto */
