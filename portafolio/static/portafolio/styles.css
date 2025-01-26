@@ -18,7 +18,7 @@ textarea {
 html {
   scroll-behavior: smooth;
 }
-.button {
+#button {
   margin: 0;
   padding: 10px 20px;
   box-sizing: border-box;
@@ -37,7 +37,7 @@ html {
   transition: all 0.3s ease;
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
 }
-.button:hover {
+#button:hover {
   background-color: #fbc02d;
   color: white;
   box-shadow: 4px 6px 10px;
@@ -61,6 +61,11 @@ body {
   color: #333;
   background-color: #f9f9f9;
   align-items: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+body.fade-out {
+  opacity: 0;
 }
 
 /* Encabezado */
@@ -91,6 +96,104 @@ header {
   height: 50px;
   border-radius: 50%;
   border: 2px solid #fff;
+}
+.about_me {
+  background-image: url("../portafolio/william.jpg");
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  height: 300px;
+}
+.about_me p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+.about_me h2 {
+  font-size: 2.5rem;
+  text-shadow: 2px 4px 6px rgb(0, 0, 0, 0.7);
+}
+.about_me::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Capa oscura */
+  z-index: 1;
+}
+.about_me * {
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté encima de la capa oscura */
+}
+/* img rys solutios*/
+.rys {
+  background-image: url("../portafolio/rys.jpg");
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  text-size-adjust: 10px;
+  text-align: center;
+  padding: 100px 20px;
+  height: 300px;
+}
+.rys p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+.rys h2 {
+  font-size: 2.5rem;
+  text-shadow: 2px 4px 6px rgb(0, 0, 0, 0.7);
+}
+.rys::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Capa oscura */
+  z-index: 1;
+}
+.rys * {
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté encima de la capa oscura */
+}
+/* spa group img */
+.spa {
+  background-image: url("../portafolio/spa.png");
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  height: 300px;
+}
+.spa h2 {
+  font-size: 2.5rem;
+  text-shadow: 2px 4px 6px rgb(0, 0, 0, 0.7);
+}
+.spa::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Capa oscura */
+  z-index: 1;
+}
+.spa * {
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté encima de la capa oscura */
 }
 
 .navbar ul {

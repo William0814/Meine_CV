@@ -1,6 +1,6 @@
 {% extends 'portafolio/base.html' %} {% block title %}Experience{% endblock %}
-{%block content %}
-<section id="">
+{%block content %} {% load static %}
+<section class="experience">
   <h2>Experience</h2>
   <p>
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum recusandae
@@ -8,4 +8,26 @@
     eveniet fuga libero voluptatem. Porro accusantium rem recusandae. Ea, porro.
   </p>
 </section>
+<section class="rys">
+  <h2>R & S Solutions</h2>
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur iure
+    deserunt nulla animi. Perspiciatis doloremque velit reiciendis! Harum totam
+    perferendis, ipsum debitis fugiat, voluptas eaque excepturi sunt veritatis a
+    odit?
+  </p>
+</section>
+<section class="spa">
+  <h2>SPA real estate group</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam expedita
+    necessitatibus quidem, delectus quia voluptas quo atque. Quod, vel dicta
+    alias enim veniam, molestias, earum tenetur nisi illum!
+  </p>
+</section>
+<a href="{% static 'portafolio/CV_Deutsch_Online.pdf' %}">
+  <button class="button" id="button">Download CV</button>
+</a>
+<br />
+<br />
 {% endblock %}

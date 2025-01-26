@@ -15,10 +15,10 @@
           <h1>William Rodriguez</h1>
         </div>
         <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#estudios">Estudios</a></li>
-          <li><a href="#experiencia">Experiencia</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#inicio" class="more-info">Home</a></li>
+          <li><a href="#estudios">Studies</a></li>
+          <li><a href="#experiencia">Experience</a></li>
+          <li><a href="#contacto">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -33,12 +33,12 @@
         aspernatur deleniti.
       </p>
       <a href="{% url 'about_me' %}">
-      <button class="button" id="button" >Conoceme</button>
+      <button class="button more-info" id="button" >Abaut me</button>
       </a>
     </section>
     <section id="estudios" class="studys">
       <div>
-      <h2>Estudios</h2>
+      <h2>Studies</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi libero
         temporibus neque fuga odit eum tempore nobis. Asperiores saepe impedit
@@ -46,34 +46,34 @@
         ullam?
       </p>
       <a href="{% url 'studies' %}">
-      <button id="button" class="button">Mas info.</button>
+      <button id="button" class="button more-info">More info.</button>
       </a>
       </div>
     </section>
     <section id="experiencia" class="experiencie">
-      <h2>Experiencia laboral</h2>
+      <h2>Experience</h2>
       <div class="experiencia-container">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident quos 
         praesentium obcaecati voluptates eius doloribus ut illum enim? Numquam, iusto
          ad veritatis dignissimos tempora est quasi. Suscipit nam illum natus.
         </p>
         <a href="{% url 'experience' %}">
-        <button class="button" id="button">Mas info.</button> <br>
+        <button class="button more-info" id="button">More info.</button> <br>
         </a>
       </div>
     </section>
     <section id="contacto">
-      <h2>Contacto</h2>
+      <h2>Contact</h2>
       <form action="" method="post">
-        <label for="nombre">Nombre</label>
+        <label for="nombre">Name</label>
         <input type="text" name="nombre" id="nombre" />
 
-        <label for="email">Correo electrónico</label>
+        <label for="email">Email</label>
         <input type="email" name="email" id="email" />
 
-        <label for="mensaje">Mensaje</label>
+        <label for="mensaje">Message</label>
         <textarea name="mensaje" id="mensaje"></textarea>
-        <button type="submit">Enviar</button>
+        <button type="submit">Send</button>
       </form>
     </section>
     <footer>
@@ -82,3 +82,25 @@
     </footer>
   </body>
 </html>
+<script>
+  // Seleccionamos solo los botones "Más info."
+  const moreInfoButtons = document.querySelectorAll('a .more-info');
+
+  moreInfoButtons.forEach(button => {
+    button.addEventListener('click', function (event) {
+      event.preventDefault(); // Evita la redirección inmediata
+
+      const href = this.closest('a').href; // Obtiene la URL del enlace padre <a>
+      if (!href) return; // Validación: si no hay href, no hace nada
+
+      // Aplica la animación
+      document.body.classList.add('fade-out');
+
+      // Redirige después de la animación (500 ms coincide con el CSS)
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500);
+    });
+  });
+</script>
+

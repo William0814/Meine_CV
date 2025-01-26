@@ -12,15 +12,15 @@
       <nav class="navbar">
         <div class="logo">
           <img
-            src="{% static 'portafolio/images/william.jpg' %}"
+            src="{% static 'portafolio/william.jpg' %}"
             alt="William Rodriguez"
           />
           <h1>William Rodriguez</h1>
         </div>
         <ul>
-          <li><a href="{% url 'home' %}">Inicio</a></li>
-          <li><a href="{% url 'studies' %}">Estudios</a></li>
-          <li><a href="{% url 'experience' %}">Experiencie</a></li>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'studies' %}">Studies</a></li>
+          <li><a href="{% url 'experience' %}">Experience</a></li>
         </ul>
       </nav>
     </header>
@@ -31,3 +31,34 @@
     </footer>
   </body>
 </html>
+<script>
+  // Seleccionamos solo los botones "Más info."
+  const moreInfoButtons = document.querySelectorAll("a .more-info");
+
+  moreInfoButtons.forEach((button) => {
+    button.addEventListener("click", function (event) {
+      event.preventDefault(); // Evita la redirección inmediata
+
+      const href = this.closest("a").href; // Obtiene la URL del enlace padre <a>
+      if (!href) return; // Validación: si no hay href, no hace nada
+
+      // Aplica la animación
+      document.body.classList.add("fade-out");
+
+      // Redirige después de la animación (500 ms coincide con el CSS)
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500);
+    });
+  });
+</script>
+<script>
+  // para abrir una nueva ventana cuando clic en descargar cv
+
+  document.getElementById("button").addEventListener("click", function () {
+    var downloadLink = document.getElementById("downloadLink");
+
+    // Abre el enlace de descarga en una nueva ventana
+    window.open(downloadLink.href, "_blank");
+  });
+</script>
