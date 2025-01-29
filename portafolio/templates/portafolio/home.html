@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,9 +12,28 @@
     <header>
       <nav class="navbar">
         <div class="logo">
-          <img src="/static/portafolio/william.jpg" alt="William Rodriguez" class="my_picture">
+          <img
+            src="/static/portafolio/william.jpg"
+            alt="William Rodriguez"
+            class="my_picture"
+          />
           <h1>William Rodriguez</h1>
         </div>
+        {% load i18n %}
+        <form action="{% url 'set_language' %}" method="post" id="language-selector">
+          {% csrf_token %}
+          <select name="language" id="language" onchange="this.form.submit()">
+              <option value="es" {% if LANGUAGE_CODE == 'es' %}selected{% endif %}>
+                  <img src="{% static 'portafolio/es.png' %}" alt="{% trans "Español" %}" class="flag-icon"> {% trans "Español" %}
+              </option>
+              <option value="de" {% if LANGUAGE_CODE == 'de' %}selected{% endif %}>
+                  <img src="{% static 'portafolio/de.png' %}" alt="{% trans "Deutsch" %}" class="flag-icon"> {% trans "Deutsch" %}
+              </option>
+              <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>
+                  <img src="{% static 'portafolio/us.png' %}" alt="{% trans "English" %}" class="flag-icon"> {% trans "English" %}
+              </option>
+          </select>
+      </form>
         <ul>
           <li><a href="#inicio" class="more-info">Home</a></li>
           <li><a href="#estudios">Studies</a></li>
@@ -23,59 +43,86 @@
       </nav>
     </header>
     <section id="inicio" class="hero">
-      
-      <div class="hero-content">
-      <h1>Hola, mi nombre es <span>William</span></h1>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos dolorem
-        quae iste ipsa ratione officiis veritatis quisquam accusantium odio
-        repellendus vero exercitationem, magni est explicabo minima animi dicta
-        aspernatur deleniti.
-      </p>
-      <a href="{% url 'about_me' %}">
-      <button class="button more-info" id="button" >Abaut me</button>
-      </a>
+      <div class="container">
+        <div class="hero-content">
+          <h1>{% trans "Hola, mi nombre es" %}<span>William</span></h1>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos
+            dolorem quae iste ipsa ratione officiis veritatis quisquam
+            accusantium odio repellendus vero exercitationem, magni est
+            explicabo minima animi dicta aspernatur deleniti.
+          </p>
+          <a href="{% url 'about_me' %}">
+            <button class="button more-info" id="button">Abaut me</button>
+          </a>
+        </div>
+      </div>
     </section>
-    <section id="estudios" class="studys">
+    <section id="estudios" class="studies">
       <div>
-      <h2>Studies</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi libero
-        temporibus neque fuga odit eum tempore nobis. Asperiores saepe impedit
-        hic ab accusantium. Nihil explicabo asperiores ipsam praesentium aliquam
-        ullam?
-      </p>
-      <a href="{% url 'studies' %}">
-      <button id="button" class="button more-info">More info.</button>
-      </a>
+        <h2>{% trans 'Studies' %}</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi libero
+          temporibus neque fuga odit eum tempore nobis. Asperiores saepe impedit
+          hic ab accusantium. Nihil explicabo asperiores ipsam praesentium
+          aliquam ullam?
+        </p>
+        <a href="{% url 'studies' %}">
+          <button id="button" class="button more-info">More info.</button>
+        </a>
       </div>
     </section>
     <section id="experiencia" class="experiencie">
       <h2>Experience</h2>
       <div class="experiencia-container">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident quos 
-        praesentium obcaecati voluptates eius doloribus ut illum enim? Numquam, iusto
-         ad veritatis dignissimos tempora est quasi. Suscipit nam illum natus.
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident
+          quos praesentium obcaecati voluptates eius doloribus ut illum enim?
+          Numquam, iusto ad veritatis dignissimos tempora est quasi. Suscipit
+          nam illum natus.
         </p>
         <a href="{% url 'experience' %}">
-        <button class="button more-info" id="button">More info.</button> <br>
+          <button class="button more-info" id="button">More info.</button>
+          <br />
         </a>
       </div>
     </section>
     <section id="contacto">
       <h2>Contact</h2>
-      <form action="" method="post">
-        <label for="nombre">Name</label>
-        <input type="text" name="nombre" id="nombre" />
+      <form action="{% url 'contact' %}" method="post">
+        {% csrf_token %}
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value="{{form.name.value|default:''}}"
+          required
+        />
 
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          value="{{form.email.value|default:''}}"
+          required
+        />
 
         <label for="mensaje">Message</label>
-        <textarea name="mensaje" id="mensaje"></textarea>
+        <textarea name="message" id="message" required>
+{{form.message.value|default:''}}</textarea
+        >
         <button type="submit">Send</button>
       </form>
     </section>
+
+    <div class="center-button">
+      <a href="{% static 'portafolio/CV_Deutsch_Online.pdf' %}" target="_blank">
+        <button class="button" id="button">Download CV</button>
+      </a>
+    </div>
+    <br />
     <footer>
       <p>&copy; 2025, Todos los derechos reservados</p>
       <p>Desarrollado por Ing. William Rodriguez</p>
@@ -84,17 +131,17 @@
 </html>
 <script>
   // Seleccionamos solo los botones "Más info."
-  const moreInfoButtons = document.querySelectorAll('a .more-info');
+  const moreInfoButtons = document.querySelectorAll("a .more-info");
 
-  moreInfoButtons.forEach(button => {
-    button.addEventListener('click', function (event) {
+  moreInfoButtons.forEach((button) => {
+    button.addEventListener("click", function (event) {
       event.preventDefault(); // Evita la redirección inmediata
 
-      const href = this.closest('a').href; // Obtiene la URL del enlace padre <a>
+      const href = this.closest("a").href; // Obtiene la URL del enlace padre <a>
       if (!href) return; // Validación: si no hay href, no hace nada
 
       // Aplica la animación
-      document.body.classList.add('fade-out');
+      document.body.classList.add("fade-out");
 
       // Redirige después de la animación (500 ms coincide con el CSS)
       setTimeout(() => {
@@ -103,4 +150,3 @@
     });
   });
 </script>
-

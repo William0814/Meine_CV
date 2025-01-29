@@ -48,6 +48,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.locale.LocaleMiddleware"
 ]
 
 ROOT_URLCONF = "meine_cv.urls"
@@ -109,7 +110,19 @@ LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 
 USE_I18N = True
-
+LANGUAGE = [
+    ('es', 'Español'),
+    ('en', 'English'),
+    ('fr', 'Français'),
+    ('de', 'Deutsch'),
+    ('it', 'Italiano'),
+    ('pt', 'Português'),
+    ('ru', 'Русский'),
+    ('zh-hans', '中文'),
+]
+LOCALE_PATHS = [
+   BASE_DIR / 'locale',
+]
 USE_TZ = True
 
 

@@ -10,49 +10,16 @@ a,
 img,
 form,
 input,
-textarea {
+textarea,
+button {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Configuración global */
 html {
-  scroll-behavior: smooth;
-}
-#button {
-  margin: 0;
-  padding: 10px 20px;
-  box-sizing: border-box;
-  align-items: center;
-  text-decoration: underline;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-  background-color: #fdd835;
-  border: 2px solid #fbc02d;
-  border-radius: 8px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
-}
-#button:hover {
-  background-color: #fbc02d;
-  color: white;
-  box-shadow: 4px 6px 10px;
-  transform: scale(1.05);
-}
-.studys {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.experiencie {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  scroll-behavior: smooth; /* Desplazamiento suave */
 }
 
 body {
@@ -60,19 +27,59 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #f9f9f9;
-  align-items: center;
-  opacity: 1;
   transition: opacity 0.5s ease-in-out;
+  align-items: center;
 }
+
 body.fade-out {
   opacity: 0;
 }
+.experiencie {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.studies {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* Contenedor principal */
+.container {
+  max-width: 1200px; /* Ancho máximo del contenido */
+  margin: 0 auto; /* Centrar horizontalmente */
+  padding: 0 20px; /* Espaciado interno lateral */
+  box-sizing: border-box;
+}
 
-/* Encabezado */
+/* Header */
 header {
   background-color: #004aad;
   color: #fff;
   padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+#language-selector {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+#language-select {
+  padding: 5px;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.flag-icon {
+  width: 20px; /* Ajusta el tamaño de las banderas */
+  height: auto;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
 .navbar {
@@ -97,104 +104,6 @@ header {
   border-radius: 50%;
   border: 2px solid #fff;
 }
-.about_me {
-  background-image: url("../portafolio/william.jpg");
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #fff;
-  text-align: center;
-  padding: 100px 20px;
-  height: 300px;
-}
-.about_me p {
-  font-size: 1.3rem;
-  line-height: 1.5;
-}
-.about_me h2 {
-  font-size: 2.5rem;
-  text-shadow: 2px 4px 6px rgb(0, 0, 0, 0.7);
-}
-.about_me::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Capa oscura */
-  z-index: 1;
-}
-.about_me * {
-  position: relative;
-  z-index: 2; /* Asegura que el texto esté encima de la capa oscura */
-}
-/* img rys solutios*/
-.rys {
-  background-image: url("../portafolio/rys.jpg");
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #fff;
-  text-size-adjust: 10px;
-  text-align: center;
-  padding: 100px 20px;
-  height: 300px;
-}
-.rys p {
-  font-size: 1.3rem;
-  line-height: 1.5;
-}
-.rys h2 {
-  font-size: 2.5rem;
-  text-shadow: 2px 4px 6px rgb(0, 0, 0, 0.7);
-}
-.rys::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Capa oscura */
-  z-index: 1;
-}
-.rys * {
-  position: relative;
-  z-index: 2; /* Asegura que el texto esté encima de la capa oscura */
-}
-/* spa group img */
-.spa {
-  background-image: url("../portafolio/spa.png");
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #fff;
-  text-align: center;
-  padding: 100px 20px;
-  height: 300px;
-}
-.spa h2 {
-  font-size: 2.5rem;
-  text-shadow: 2px 4px 6px rgb(0, 0, 0, 0.7);
-}
-.spa::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Capa oscura */
-  z-index: 1;
-}
-.spa * {
-  position: relative;
-  z-index: 2; /* Asegura que el texto esté encima de la capa oscura */
-}
 
 .navbar ul {
   list-style: none;
@@ -210,6 +119,35 @@ header {
 
 .navbar ul li a:hover {
   text-decoration: underline;
+}
+
+/* Botones */
+#button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  background-color: #fdd835;
+  border: 2px solid #fbc02d;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#button:hover {
+  background-color: #fbc02d;
+  color: white;
+  box-shadow: 4px 6px 10px;
+  transform: scale(1.05);
+}
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Hero Section */
@@ -234,18 +172,22 @@ header {
   font-size: 1.2rem;
 }
 
-/* Sección "Sobre mí" */
+/* Sección general */
 section {
-  padding: 50px 20px;
-  margin: 30px 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgb(0, 0, 0, 0.1);
+  padding: 20px 25px;
+  margin: 15px 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  margin: 20px auto;
 }
+
 section:nth-child(odd) {
   background-color: #fff5e1;
 }
+
 section:nth-child(even) {
-  background-color: #fff5e1;
+  background-color: #f8f9fa;
 }
 
 section h2 {
@@ -256,14 +198,95 @@ section h2 {
 }
 
 section p {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto 1rem auto;
   text-align: justify;
   line-height: 1.8;
   font-size: 1rem;
 }
 
-/* Formulario de contacto */
+/* Imagen de fondo y texto */
+.about_me,
+.rys,
+.spa,
+.tae,
+.sena,
+.cun {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  height: 300px;
+  position: relative;
+}
+.sena {
+  background-image: url("sena.png");
+}
+.cun {
+  background-image: url("cun.png");
+}
+.rys {
+  background-image: url("rys.jpg");
+}
+.spa {
+  background-image: url("spa.png");
+}
+.tae {
+  background-image: url("tae.png");
+}
+.about_me {
+  background-image: url("img2.jpg");
+}
+
+.about_me::before,
+.rys::before,
+.spa::before,
+.tae::before,
+.sena::before,
+.cun::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Superposición oscura */
+  z-index: 1;
+}
+
+.about_me *,
+.rys *,
+.spa *,
+.tae *,
+.sena *,
+.cun * {
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté encima */
+}
+
+.about_me h2,
+.rys h2,
+.spa h2,
+.tae h2,
+.sena h2,
+.cun h2 {
+  font-size: 2.5rem;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.about_me p,
+.rys p,
+.spa p,
+.tae p,
+.sena p,
+.cun p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+/* Formularios */
 form {
   max-width: 600px;
   margin: 0 auto;
@@ -307,4 +330,40 @@ footer {
 
 footer p {
   margin-bottom: 0.5rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .about_me,
+  .rys,
+  .spa,
+  .tae,
+  .sena,
+  .cun {
+    height: 200px;
+    background-attachment: scroll; /* Quitar paralaje */
+  }
+
+  section {
+    padding: 15px 10px;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
 }
