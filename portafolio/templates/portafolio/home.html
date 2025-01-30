@@ -1,5 +1,4 @@
-{% load static %}
-
+{% load static %} {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meine CV</title>
     <link rel="stylesheet" href="{% static 'portafolio/styles.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <header>
@@ -19,21 +22,7 @@
           />
           <h1>William Rodriguez</h1>
         </div>
-        {% load i18n %}
-        <form action="{% url 'set_language' %}" method="post" id="language-selector">
-          {% csrf_token %}
-          <select name="language" id="language" onchange="this.form.submit()">
-              <option value="es" {% if LANGUAGE_CODE == 'es' %}selected{% endif %}>
-                  <img src="{% static 'portafolio/es.png' %}" alt="{% trans "Español" %}" class="flag-icon"> {% trans "Español" %}
-              </option>
-              <option value="de" {% if LANGUAGE_CODE == 'de' %}selected{% endif %}>
-                  <img src="{% static 'portafolio/de.png' %}" alt="{% trans "Deutsch" %}" class="flag-icon"> {% trans "Deutsch" %}
-              </option>
-              <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>
-                  <img src="{% static 'portafolio/us.png' %}" alt="{% trans "English" %}" class="flag-icon"> {% trans "English" %}
-              </option>
-          </select>
-      </form>
+
         <ul>
           <li><a href="#inicio" class="more-info">Home</a></li>
           <li><a href="#estudios">Studies</a></li>
@@ -45,12 +34,12 @@
     <section id="inicio" class="hero">
       <div class="container">
         <div class="hero-content">
-          <h1>{% trans "Hola, mi nombre es" %}<span>William</span></h1>
+          <h1>Hello, mi name is <span>William</span></h1>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos
-            dolorem quae iste ipsa ratione officiis veritatis quisquam
-            accusantium odio repellendus vero exercitationem, magni est
-            explicabo minima animi dicta aspernatur deleniti.
+            Thank you very much for visiting my page. I am pleased to share with
+            you my experiences, studies, and knowledge, which will help you gain
+            a clearer understanding of my profile, my strengths, and, why not,
+            also my areas for improvement. Welcome!
           </p>
           <a href="{% url 'about_me' %}">
             <button class="button more-info" id="button">Abaut me</button>
@@ -60,13 +49,8 @@
     </section>
     <section id="estudios" class="studies">
       <div>
-        <h2>{% trans 'Studies' %}</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi libero
-          temporibus neque fuga odit eum tempore nobis. Asperiores saepe impedit
-          hic ab accusantium. Nihil explicabo asperiores ipsam praesentium
-          aliquam ullam?
-        </p>
+        <h2>Studies</h2>
+        <p>Studies and knowledge section</p>
         <a href="{% url 'studies' %}">
           <button id="button" class="button more-info">More info.</button>
         </a>
@@ -75,18 +59,20 @@
     <section id="experiencia" class="experiencie">
       <h2>Experience</h2>
       <div class="experiencia-container">
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident
-          quos praesentium obcaecati voluptates eius doloribus ut illum enim?
-          Numquam, iusto ad veritatis dignissimos tempora est quasi. Suscipit
-          nam illum natus.
-        </p>
+        <p>Section of work experience and functions performed</p>
         <a href="{% url 'experience' %}">
           <button class="button more-info" id="button">More info.</button>
           <br />
         </a>
       </div>
     </section>
+    {% if messages %}
+    <div class="messages">
+      {% for message in messages %}
+      <div class="alert alert-success">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %}
     <section id="contacto">
       <h2>Contact</h2>
       <form action="{% url 'contact' %}" method="post">
@@ -116,6 +102,42 @@
         <button type="submit">Send</button>
       </form>
     </section>
+    <div id="successModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Success</h2>
+        <p>Your message has been sent successfully!</p>
+        <button id="confirmButton">OK</button>
+      </div>
+    </div>
+    {% if show_modal %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let modal = document.getElementById("successModal");
+        let closeButton = document.querySelector(".close");
+        let confirmButton = document.getElementById("confirmButton");
+
+        modal.style.display = "flex";
+
+        closeButton.onclick = function () {
+          modal.style.display = "none";
+          window.location.href = "{% url 'home' %}"; // Redirigir después de cerrar
+        };
+
+        confirmButton.onclick = function () {
+          modal.style.display = "none";
+          window.location.href = "{% url 'home' %}"; // Redirigir después de aceptar
+        };
+
+        window.onclick = function (event) {
+          if (event.target === modal) {
+            modal.style.display = "none";
+            window.location.href = "{% url 'home' %}";
+          }
+        };
+      });
+    </script>
+    {% endif %}
 
     <div class="center-button">
       <a href="{% static 'portafolio/CV_Deutsch_Online.pdf' %}" target="_blank">
@@ -124,8 +146,34 @@
     </div>
     <br />
     <footer>
-      <p>&copy; 2025, Todos los derechos reservados</p>
-      <p>Desarrollado por Ing. William Rodriguez</p>
+      <p>&copy; 2025, all rights reserved</p>
+      <p>Developed by Ing. William Rodriguez</p>
+      <div>
+        <a
+          href="https://www.facebook.com/willi.rodriguezzzz"
+          target="_blank"
+          class="social_icon"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/will-dav-rodri-pot-5533901a6/"
+          target="_blank"
+          class="social_icon"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a
+          href="http://wa.me/+4917620692862"
+          target="_blank"
+          class="social_icon"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a
+          href="https://github.com/William0814"
+          target="_blank"
+          class="social_icon"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
     </footer>
   </body>
 </html>

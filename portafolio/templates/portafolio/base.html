@@ -1,11 +1,15 @@
-{% load static %}
+{% load static %} {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}Mi CV{% endblock %}</title>
+    <title>{% block title %}My CV{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'portafolio/styles.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <header>
@@ -33,39 +37,34 @@
     <br />
 
     <footer>
-      <p>&copy; 2025 - William Rodriguez</p>
-      <p>Desarrollado por Ing. William Rodriguez</p>
+      <p>&copy; 2025, all rights reserved</p>
+      <p>Developed by Ing. William Rodriguez</p>
+      <div>
+        <a
+          href="https://www.facebook.com/willi.rodriguezzzz"
+          target="_blank"
+          class="social_icon"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/will-dav-rodri-pot-5533901a6/"
+          target="_blank"
+          class="social_icon"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a
+          href="http://wa.me/+4917620692862"
+          target="_blank"
+          class="social_icon"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a
+          href="https://github.com/William0814"
+          target="_blank"
+          class="social_icon"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
     </footer>
   </body>
 </html>
-<script>
-  // Seleccionamos solo los botones "Más info."
-  const moreInfoButtons = document.querySelectorAll("a .more-info");
-
-  moreInfoButtons.forEach((button) => {
-    button.addEventListener("click", function (event) {
-      event.preventDefault(); // Evita la redirección inmediata
-
-      const href = this.closest("a").href; // Obtiene la URL del enlace padre <a>
-      if (!href) return; // Validación: si no hay href, no hace nada
-
-      // Aplica la animación
-      document.body.classList.add("fade-out");
-
-      // Redirige después de la animación (500 ms coincide con el CSS)
-      setTimeout(() => {
-        window.location.href = href;
-      }, 500);
-    });
-  });
-</script>
-<script>
-  // para abrir una nueva ventana cuando clic en descargar cv
-
-  document.getElementById("button").addEventListener("click", function () {
-    var downloadLink = document.getElementById("downloadLink");
-
-    // Abre el enlace de descarga en una nueva ventana
-    window.open(downloadLink.href, "_blank");
-  });
-</script>
