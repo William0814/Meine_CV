@@ -173,6 +173,8 @@ section {
   box-shadow: 0 4px 6px rgba(161, 12, 12, 0.1);
   max-width: 90%;
   margin: 20px auto;
+  font-size: 1.3rem;
+  line-height: 1.5;
 }
 
 section:nth-child(odd) {
@@ -195,7 +197,8 @@ section p {
   margin: 0 auto 1rem auto;
   text-align: center;
   line-height: 1.8;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
 }
 
 /* Imagen de fondo y texto */
