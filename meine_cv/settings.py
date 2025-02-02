@@ -13,12 +13,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import environ
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-env = environ.Env()
-environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -83,8 +82,18 @@ WSGI_APPLICATION = "meine_cv.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default' : dj_database_url.config(default=os.getenv('DATABASE_URL'), conn_max_age=600)
+    
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',  # Nombre de la base de datos
+        'USER': 'postgres',  # Usuario de la base de datos
+        'PASSWORD': 'EwVgnMMCXisZDjBBqsNrewhlPmwdGCBG',  # Contraseña
+        'HOST': 'postgres.railway.internal',  # Dirección del servidor de la base de datos
+        'PORT': '5432',  # Puerto de la base de datos
     }
+}
+
+    
 
 
 
