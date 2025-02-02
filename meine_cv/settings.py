@@ -83,7 +83,7 @@ WSGI_APPLICATION = "meine_cv.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default' : dj_database_url.config(default=os.getenv('DATABASE_URL')),
+    'default' : dj_database_url.config(default=os.getenv('DATABASE_URL'), conn_max_age=600)
     }
 
 
