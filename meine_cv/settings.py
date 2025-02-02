@@ -81,7 +81,7 @@ WSGI_APPLICATION = "meine_cv.wsgi.application"
 
 DATABASES = {
     "default": 
-        dj_database_url.config(default=os.getenv('postgresql://postgres:EwVgnMMCXisZDjBBqsNrewhlPmwdGCBG@postgres.railway.internal:5432/railway'))
+        dj_database_url.config(default=os.getenv('DATABASE_URL'))
 
     }
 
