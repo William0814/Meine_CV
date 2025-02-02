@@ -145,3 +145,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATIC_DIRS = [
     os.path.join(BASE_DIR, "portafolio/static"),
 ]
+
+CSRF_TRUSTED_ORIGINS = ["https://william-rodriguez-cv.up.railway.app"]
