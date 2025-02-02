@@ -6,6 +6,9 @@ class Contact(models.Model):
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        db_table = "portafolio_contact"
+
     def __str__(self):
         return f"{self.name}-{self.email}"
 # Create your models here.
