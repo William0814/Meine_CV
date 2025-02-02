@@ -13,9 +13,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 
 # Quick-start development settings - unsuitable for production
@@ -80,10 +83,7 @@ WSGI_APPLICATION = "meine_cv.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default":
-    dj_database_url.config(default=os.getenv('DATABASE_URL')),
-       
-    
+    'default' : dj_database_url.config(default=os.getenv('DATABASE_URL')),
     }
 
 
@@ -148,3 +148,4 @@ STATIC_DIRS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = ["https://william-rodriguez-cv.up.railway.app"]
+print ("DATABASE_URL", os.getenv('DATABASE_URL'))
