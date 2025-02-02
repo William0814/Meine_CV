@@ -3,15 +3,6 @@ from django.contrib import messages
 from django.utils.translation import gettext as _
 from .forms import ContactForm
 
-"""def contact_view(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    else:
-        form = ContactForm()
-    return render(request, 'portafolio/home.html', {'form': form, 'title': _("Contact"), 'message_sent': _("Your message has been sent successfully!")  })"""
 
 # Create your views here.
 
@@ -37,4 +28,4 @@ def contact_view(request):
             return render(request, 'portafolio/home.html', {'form': ContactForm(), 'show_modal': True})
     else:
         form = ContactForm()
-    return render(request, 'portafolio/home.html', {'form': form})
+    return render(request, 'portafolio/home.html', {'form': form, 'title': _("Contact"), 'message_sent': _("Your message has been sent successfully!")  })
