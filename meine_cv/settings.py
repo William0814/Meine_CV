@@ -13,8 +13,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from dotenv import load_dotenv
 
 
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -35,13 +37,14 @@ ALLOWED_HOSTS = ["william-rodriguez-cv.up.railway.app"]
 # Application definition
 
 INSTALLED_APPS = [
-    "portafolio",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "whitenoise.runserver_nostatic",
+    "portafolio",
 ]
 
 MIDDLEWARE = [
@@ -82,16 +85,9 @@ WSGI_APPLICATION = "meine_cv.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',  # Nombre de la base de datos
-        'USER': 'postgres',  # Usuario de la base de datos
-        'PASSWORD': 'EwVgnMMCXisZDjBBqsNrewhlPmwdGCBG',  # Contraseña
-        'HOST': 'postgres.railway.internal',  # Dirección del servidor de la base de datos
-        'PORT': '5432',  # Puerto de la base de datos
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
     }
-}
+
 
     
 

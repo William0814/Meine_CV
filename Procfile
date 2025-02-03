@@ -1,1 +1,1 @@
-web: gunicorn meine_cv.wsgi --log-file -
+web: python manage.py collectstatic && gunicorn meine_cv.wsgi --log-file -
