@@ -414,3 +414,40 @@ footer p {
     padding: 8px 15px;
   }
 }
+@media (max-width: 768px) {
+  .about_me h2,
+  .rys h2,
+  .spa h2,
+  .tae h2,
+  .sena h2,
+  .cun h2 {
+    font-size: 1.5rem;
+    max-width: 90%;
+    margin: 0 auto;
+    word-wrap: break-word;
+  }
+
+  .about_me p,
+  .rys p,
+  .spa p,
+  .tae p,
+  .sena p,
+  .cun p {
+    font-size: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+    word-wrap: break-word;
+  }
+
+  .about_me,
+  .rys,
+  .spa,
+  .tae,
+  .sena,
+  .cun {
+    padding: 50px 10px; /* Reducir el padding */
+    height: auto;
+    background-size: cover;
+    background-attachment: scroll; /* Evitar problemas de fondo fijo */
+  }
+}
