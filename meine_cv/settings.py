@@ -148,9 +148,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-STATIC_DIRS = [
-    os.path.join(BASE_DIR, "portafolio/static"),
-]
+
+
 
 CSRF_TRUSTED_ORIGINS = ["https://william-rodriguez-cv.up.railway.app"]
-print ("DATABASE_URL", os.getenv('DATABASE_URL'))
