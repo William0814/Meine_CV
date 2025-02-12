@@ -164,9 +164,7 @@ header {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 2rem;
-  background: linear-gradient(45deg, #ffff2f, #004aad);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3s);
 }
 
 .hero h1 span {
