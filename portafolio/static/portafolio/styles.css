@@ -164,7 +164,15 @@ header {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 2rem;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3s);
+  background: linear-gradient(45deg, #fff, #004aad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero h1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4s);
 }
 
 .hero h1 span {
@@ -403,7 +411,7 @@ footer p {
   }
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
   }
 
