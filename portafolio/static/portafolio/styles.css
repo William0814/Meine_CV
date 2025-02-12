@@ -23,11 +23,11 @@ html {
 }
 
 body {
-  font-family: "Arial", sans-serif;
-  line-height: 1.6;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.8;
   color: #333;
   background-color: #f9f9f9;
-  transition: opacity 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   align-items: center;
 }
 
@@ -132,10 +132,16 @@ header {
 }
 
 #button:hover {
-  background-color: #fbc02d;
+  background-color: #fdd835;
   color: white;
-  box-shadow: 4px 6px 10px;
+  box-shadow: 0 4px 15px rgba(253, 184, 35, 0.3);
   transform: scale(1.05);
+}
+.element-transition {
+  transition: all 0.5s ease-in-out;
+}
+.element-transition:hover {
+  transform: translateY(-5px);
 }
 .center-button {
   display: flex;
@@ -146,14 +152,21 @@ header {
 /* Hero Section */
 .hero {
   text-align: center;
-  background: linear-gradient(to right, #004aad, #0073e6);
+  background: linear-gradient(135deg, #004aad, #0073e6);
   color: #fff;
   padding: 4rem 2rem;
 }
+/* Textura leichte im Background */
+.background-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 960'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M1440 0c0 114.079-57.575 228.787-136.064 309.354-59.79.469-123.148 61.87-123.148 124.908 0 61.35 54.002 120.774-54.002 204.022zm-720 500c-57.575 228.787-136.064 309.354-136.064 309.354s54.029-80.877 136.064-224.951 57.575-226.1 57.575-226.1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(45deg, #ffff2f, #004aad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero h1 span {
@@ -216,7 +229,11 @@ section p {
   padding: 100px 20px;
   height: auto;
   position: relative;
-  min-height: 300px;
+  min-height: 400px;
+}
+.element-text {
+  position: relative;
+  z-index: 2;
 }
 .sena {
   background-image: url("sena.png");
@@ -389,6 +406,7 @@ footer p {
 
   .hero h1 {
     font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero p {
@@ -405,11 +423,12 @@ footer p {
     background-attachment: scroll; /* Quitar paralaje */
   }
 
-  section {
+  .section {
     padding: 15px 10px;
+    margin: 15px 20px;
   }
 
-  button {
+  .button {
     font-size: 0.9rem;
     padding: 8px 15px;
   }
