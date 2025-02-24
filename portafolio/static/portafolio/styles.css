@@ -160,14 +160,23 @@ header {
 .background-texture {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 960'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M1440 0c0 114.079-57.575 228.787-136.064 309.354-59.79.469-123.148 61.87-123.148 124.908 0 61.35 54.002 120.774-54.002 204.022zm-720 500c-57.575 228.787-136.064 309.354-136.064 309.354s54.029-80.877 136.064-224.951 57.575-226.1 57.575-226.1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
+.title_dev_projects {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.title_dev_projects h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  transform: translateY(-5px);
+  color: black;
+}
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 2rem;
-  background: linear-gradient(45deg, #fff, #004aad);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .hero h1:hover {
@@ -396,10 +405,24 @@ footer p {
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
+.social_icon_experiencie {
+  margin-top: 1rem;
+  margin: 0 15px;
+  color: black;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
 .social_icon:hover {
   color: #ffcc00;
 }
 .social_icon i {
+  font-size: 2rem;
+}
+
+.social_icon_experience:hover {
+  color: #ffcc00;
+}
+.social_icon_experience i {
   font-size: 2rem;
 }
 /* Responsividad */
