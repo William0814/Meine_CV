@@ -5,6 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+
+    <!--SEO meta tags-->
+    <meta
+      name="description"
+      content="{% trans 'Curriculum from william rodriguez - Programmer and dev web' %}"
+    />
+    <meta
+      name="keywords"
+      content="{% trans 'CV, Curriculum, Programmer, Dev, Django, Python' %}"
+    />
+    <meta name="author" content="William Rodriguez" />
+    <meta name="robots" content="index, follow" />
+
+    <!--Favicon and styles CSS-->
     <link rel="stylesheet" href="{% static 'portafolio/styles.css' %}" />
     <link
       rel="apple-touch-icon"
@@ -30,17 +44,20 @@
     />
   </head>
   <body>
+    <!-- Navigation bar-->
     <header>
       <nav class="navbar">
         <div class="logo">
-          <img
-            src="/static/portafolio/william.jpg"
-            alt="William Rodriguez"
-            class="my_picture"
-          />
+          <a href="#inicio">
+            <img
+              src="/static/portafolio/william.jpg"
+              alt="William Rodriguez"
+              class="my_picture"
+            />
+          </a>
+
           <h1>William Rodriguez</h1>
         </div>
-
         <ul>
           <li><a href="#inicio" class="more-info">Home</a></li>
           <li><a href="#estudios">Studies</a></li>
@@ -49,6 +66,8 @@
         </ul>
       </nav>
     </header>
+
+    <!--Section of About me and  button-->
     <section id="inicio" class="hero">
       <div class="container">
         <div class="hero-content">
@@ -65,6 +84,8 @@
         </div>
       </div>
     </section>
+
+    <!--Section of Studies and button-->
     <section id="estudios" class="studies">
       <div>
         <h2>Studies</h2>
@@ -74,6 +95,8 @@
         </a>
       </div>
     </section>
+
+    <!--Section of experience and button-->
     <section id="experiencia" class="experiencie">
       <h2>Experience</h2>
       <div class="experiencia-container">
@@ -83,6 +106,8 @@
           <br />
         </a>
       </div>
+
+      <!--Form of contact-->
     </section>
     {% if messages %}
     <div class="messages">
@@ -112,7 +137,7 @@
           value="{{form.email.value|default:''}}"
           required
         />
-
+        <!--Contrunstion for Modal-->
         <label for="mensaje">Message</label>
         <textarea name="message" id="message" required>
 {{form.message.value|default:''}}</textarea
@@ -129,6 +154,7 @@
       </div>
     </div>
     {% if show_modal %}
+    <!--Script for Modal -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         let modal = document.getElementById("successModal");
@@ -165,6 +191,8 @@
       </a>
     </div>
     <br />
+
+    <!--Footer and icons-->
     <footer>
       <p>&copy; 2025, all rights reserved</p>
       <p>Developed by Ing. William Rodriguez</p>
@@ -201,6 +229,8 @@
     </footer>
   </body>
 </html>
+
+<!--Script for trnasition between pages-->
 <script>
   // Seleccionamos solo los botones "Más info."
   const moreInfoButtons = document.querySelectorAll("a .more-info");
