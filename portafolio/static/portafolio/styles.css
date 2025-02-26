@@ -411,11 +411,11 @@ footer p {
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
-.social_icon_experiencie {
-  margin-top: 1rem;
-  margin: 0 15px;
+.social_icon_experience {
+  margin-top: 3rem;
+  margin: 16px 15px;
   color: black;
-  font-size: 1.5rem;
+  font-size: 2rem;
   transition: color 0.3s ease;
 }
 .social_icon:hover {
