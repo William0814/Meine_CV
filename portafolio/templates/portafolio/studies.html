@@ -1,6 +1,11 @@
 {% extends 'portafolio/base.html' %} {% block title %}Studies{% endblock %}
 {%block content %} {% load static %}
 <section class="sena">
+  <nav class="navbar">
+    <div class="logo-sena">
+      <img src="{% static 'portafolio/sena.jpg' %}" alt="" />
+    </div>
+  </nav>
   <h2>SENA</h2>
   <p>
     (National Learning Service): SENA is a public Colombian institution where I
@@ -14,6 +19,9 @@
   </p>
 </section>
 <section class="cun">
+  <div class="logo-cun">
+    <img src="{% static 'portafolio/cun.png' %}" alt="" />
+  </div>
   <h2>CUN</h2>
   <p>
     (National Unified Corporation of Higher Education): I continued my studies
@@ -26,6 +34,9 @@
   </p>
 </section>
 <section class="unir">
+  <div class="logo-unir">
+    <img src="{% static 'portafolio/unir.webp' %}" alt="" />
+  </div>
   <h2>UNIR</h2>
   <p>
     (International University Foundation of the Rioja) I am currently pursuing a
