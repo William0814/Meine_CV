@@ -241,7 +241,8 @@ section p {
 .spa,
 .tae,
 .sena,
-.cun {
+.cun,
+.unir {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -274,13 +275,17 @@ section p {
 .about_me {
   background-image: url("img2.jpg");
 }
+.unir {
+  background-image: url("unir2.png");
+}
 
 .about_me::before,
 .rys::before,
 .spa::before,
 .tae::before,
 .sena::before,
-.cun::before {
+.cun::before,
+.unir::before {
   content: "";
   position: absolute;
   top: 0;
@@ -296,7 +301,8 @@ section p {
 .spa *,
 .tae *,
 .sena *,
-.cun * {
+.cun *,
+.unir * {
   position: relative;
   z-index: 2; /* Asegura que el texto esté encima */
 }
@@ -306,7 +312,8 @@ section p {
 .spa h2,
 .tae h2,
 .sena h2,
-.cun h2 {
+.cun h2,
+.unir p {
   font-size: 2.5rem;
   text-shadow: 2px 4px 6px rgb(240, 237, 237);
 }
@@ -316,7 +323,8 @@ section p {
 .spa p,
 .tae p,
 .sena p,
-.cun p {
+.cun p,
+.unir p {
   font-size: 1.3rem;
   line-height: 1.5;
 }
@@ -453,7 +461,8 @@ footer p {
   .spa,
   .tae,
   .sena,
-  .cun {
+  .cun,
+  .unir {
     height: 200px;
     background-attachment: scroll; /* Quitar paralaje */
   }
@@ -474,7 +483,8 @@ footer p {
   .spa h2,
   .tae h2,
   .sena h2,
-  .cun h2 {
+  .cun h2,
+  .unir h2 {
     font-size: 1.5rem;
     max-width: 90%;
     margin: 0 auto;
@@ -486,7 +496,8 @@ footer p {
   .spa p,
   .tae p,
   .sena p,
-  .cun p {
+  .cun p,
+  .unir p {
     font-size: 1rem;
     max-width: 90%;
     margin: 0 auto;
@@ -498,7 +509,8 @@ footer p {
   .spa,
   .tae,
   .sena,
-  .cun {
+  .cun,
+  .unir {
     padding: 50px 10px; /* Reducir el padding */
     height: auto;
     background-size: cover;
