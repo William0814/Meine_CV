@@ -38,11 +38,13 @@ body.fade-out {
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: black;
 }
 .studies {
   justify-content: center;
   align-items: center;
   text-align: center;
+  color: black;
 }
 /* Contenedor principal */
 .container {
@@ -102,8 +104,8 @@ header {
   display: flex;
 }
 .logo-unir img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 25%;
   border: 2px solid #fff;
 }
@@ -112,8 +114,8 @@ header {
   display: flex;
 }
 .logo-cun img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 25%;
   border: 2px solid #fff;
 }
@@ -122,11 +124,42 @@ header {
   display: flex;
 }
 .logo-sena img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 25%;
   border: 2px solid #fff;
 }
+.logo-rys {
+  align-items: center;
+  display: flex;
+}
+.logo-rys img {
+  width: 150px;
+  height: 150px;
+  border-radius: 25%;
+  border: 2px solid #fff;
+}
+.logo-spa {
+  align-items: center;
+  display: flex;
+}
+.logo-spa img {
+  width: 150px;
+  height: 150px;
+  border-radius: 25%;
+  border: 2px solid #fff;
+}
+.logo-tae {
+  align-items: center;
+  display: flex;
+}
+.logo-tae img {
+  width: 150px;
+  height: 150px;
+  border-radius: 25%;
+  border: 2px solid #fff;
+}
+
 .navbar ul {
   list-style: none;
   display: flex;
@@ -236,8 +269,8 @@ section {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-7px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
 }
 
 section:nth-child(odd) {
@@ -263,6 +296,89 @@ section p {
   line-height: 1.8;
   font-size: 1.2rem;
   line-height: 1.5;
+}
+label {
+  font-weight: bold;
+}
+.skills {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+}
+.info {
+  text-align: center;
+  color: black;
+}
+
+select {
+  width: 225px;
+  padding: 5px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+}
+
+.info {
+  margin-top: 10px;
+  padding: 10px;
+  background: #e0f7fa;
+  border-left: 5px solid #00796b;
+  text-align: center;
+  border-radius: 5px;
+  color: black;
+}
+
+.info-box.visible {
+  display: block;
+}
+
+.info:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+}
+.python {
+  color: #000;
+  font-weight: bold;
+}
+.django {
+  color: black;
+  font-weight: bold;
+}
+.html {
+  color: black;
+  font-weight: bold;
+}
+.css {
+  color: black;
+  font-weight: bold;
+}
+.sql-server {
+  color: black;
+  font-weight: bold;
+}
+.mysql {
+  color: black;
+  font-weight: bold;
+}
+.flask {
+  color: black;
+  font-weight: bold;
+}
+.power-platform {
+  color: black;
+  font-weight: bold;
+}
+.uml {
+  color: black;
+  font-weight: bold;
+}
+.canva {
+  color: black;
+  font-weight: bold;
 }
 
 .about_me *,

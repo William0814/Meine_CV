@@ -22,4 +22,78 @@
     can contact me through the form on the main page or via my social networks.
   </p>
 </section>
+<div class="skills">
+  <label for="skills">Development Skills</label>
+  <select name="" id="skills" onchange="mostrarInformacion()">
+    <option value="null"></option>
+    <option value="python" class="python" translate="no">Python</option>
+    <option value="django" class="django">Django</option>
+    <option value="flask" class="flask" translate="no">Flask</option>
+    <option value="html" class="html">HTML and CSS Basic</option>
+    <option value="sql-server" class="sql-server">SQL Server and MySQL</option>
+    <option value="power-platform" class="power-platform" translate="no">
+      Power Platform
+    </option>
+    <option value="uml" class="uml" translate="no">Star UML</option>
+    <option value="canva" class="canva" translate="no">Canva</option>
+  </select>
+</div>
+
+<div id="info" class="info"></div>
+<br />
+<br />
+
+<script>
+  function mostrarInformacion() {
+    var seleccion = document.getElementById("skills").value;
+    var informacionDiv = document.getElementById("info");
+
+    if (seleccion === "") {
+      informacionDiv.classList.remove("visible");
+      informacionDiv.innerHTML = "python";
+      return;
+    }
+
+    var info;
+    switch (seleccion) {
+      case "python":
+        info =
+          "I have knowledge of Python, a versatile and powerful programming language. I have developed web applications and automated scripts, and I continue to deepen my understanding, especially in backend development with Django and Flask.";
+        break;
+      case "django":
+        info =
+          "I am learning Django, a high-level web framework for Python. I have built structured applications, managed databases using Django ORM, and applied best practices in web architecture. Currently, I am exploring Django REST Framework (DRF) for API development.";
+        break;
+      case "html":
+        info =
+          "I have basic knowledge of HTML and CSS, allowing me to structure and design web pages. I am currently improving my skills in Bootstrap and Tailwind CSS to create more attractive and responsive interfaces.";
+        break;
+      case "sql-server":
+        info =
+          "I have experience working with SQL Server and MySQL, designing databases, writing SQL queries, and managing data structures. I am currently deepening my knowledge of PostgreSQL to enhance my experience with relational databases.";
+        break;
+      case "flask":
+        info =
+          "I have basic knowledge of Flask, a lightweight Python microframework for web development. It has helped me better understand how backend applications work and how to build web services.";
+        break;
+      case "power-platform":
+        info =
+          "I have experience with Microsoft Power Platform, where I have developed applications using Power Apps to automate business processes and improve productivity. I have also worked with Power Automate to integrate workflows and automate repetitive tasks.";
+        break;
+      case "uml":
+        info =
+          "I am proficient in StarUML for system modeling using UML diagrams, such as class diagrams, use case diagrams, and sequence diagrams, which help me better plan project architecture.";
+        break;
+      case "canva":
+        info =
+          "I have experience with Canva, a graphic design tool that I use to create visually appealing content, such as presentations, infographics, and social media materials.";
+        break;
+      default:
+        info = "";
+    }
+
+    informacionDiv.classList.add("visible");
+    informacionDiv.innerHTML = info;
+  }
+</script>
 {% endblock %}
