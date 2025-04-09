@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.utils.translation import gettext as _
 from .forms import ContactForm
+from .SendEmail import send_email
 
 
 # Create your views here.
@@ -24,6 +25,17 @@ def contact_view(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
+
+            # Send Email with the user information of contact form.
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message_text_tarea = form.cleaned_data['message']
+            message = f"""Subject: New Email of your CV_web \n\n 
+            Name: {name}
+            Email: {email}
+            Message: {message_text_tarea} """
+            send_email(message)
+
             messages.success(request, "Your message has been sent successfully!")
             return render(request, 'portafolio/home.html', {'form': ContactForm(), 'show_modal': True})
     else:
