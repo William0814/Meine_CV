@@ -159,6 +159,16 @@ header {
   border-radius: 25%;
   border: 2px solid #fff;
 }
+.logo-poliedro {
+  align-items: center;
+  display: flex;
+}
+.logo-poliedro img {
+  width: 150px;
+  height: 150px;
+  border-radius: 25%;
+  border: 2px solid #fff;
+}
 
 .navbar ul {
   list-style: none;
@@ -340,45 +350,26 @@ select {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
 }
-.python {
-  color: #000;
-  font-weight: bold;
-}
-.django {
+
+
+.canva,
+.net,
+.azure-devops,
+.maui,
+.django,
+.html,
+.sql-server,
+.mysql,
+.flask,
+.power-platform,
+.uml,
+.docker,
+.spring,
+.redis,
+.figma {
   color: black;
-  font-weight: bold;
-}
-.html {
-  color: black;
-  font-weight: bold;
-}
-.css {
-  color: black;
-  font-weight: bold;
-}
-.sql-server {
-  color: black;
-  font-weight: bold;
-}
-.mysql {
-  color: black;
-  font-weight: bold;
-}
-.flask {
-  color: black;
-  font-weight: bold;
-}
-.power-platform {
-  color: black;
-  font-weight: bold;
-}
-.uml {
-  color: black;
-  font-weight: bold;
-}
-.canva {
-  color: black;
-  font-weight: bold;
+  font-weight: bolder;
+
 }
 
 .about_me *,
@@ -387,7 +378,8 @@ select {
 .tae *,
 .sena *,
 .cun *,
-.unir * {
+.unir *,
+.poliedro * {
   position: relative;
   z-index: 2; /* Asegura que el texto esté encima */
 }
@@ -398,7 +390,8 @@ select {
 .tae h2,
 .sena h2,
 .cun h2,
-.unir p {
+.unir h2,
+.poliedro h2 {
   font-size: 2.2rem;
   text-shadow: 2px 4px 6px rgb(255, 255, 255, 0, 3);
 }
@@ -409,7 +402,8 @@ select {
 .tae p,
 .sena p,
 .cun p,
-.unir p {
+.unir p,
+.poliedro p {
   font-size: 1.3rem;
   line-height: 1.6;
   max-width: 800px;
@@ -549,7 +543,8 @@ footer p {
   .tae,
   .sena,
   .cun,
-  .unir {
+  .unir,
+  .poliedro {
     height: 200px;
     background-attachment: scroll; /* Quitar paralaje */
   }
@@ -571,7 +566,8 @@ footer p {
   .tae h2,
   .sena h2,
   .cun h2,
-  .unir h2 {
+  .unir h2,
+  .poliedro h2 {
     font-size: 1.5rem;
     max-width: 90%;
     margin: 0 auto;
@@ -584,7 +580,8 @@ footer p {
   .tae p,
   .sena p,
   .cun p,
-  .unir p {
+  .unir p,
+  .poliedro p {
     font-size: 1rem;
     max-width: 90%;
     margin: 0 auto;
@@ -597,7 +594,8 @@ footer p {
   .tae,
   .sena,
   .cun,
-  .unir {
+  .unir,
+  .poliedro {
     padding: 50px 10px; /* Reducir el padding */
     height: auto;
     background-size: cover;

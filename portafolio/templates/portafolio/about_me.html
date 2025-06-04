@@ -17,25 +17,29 @@
     efficient solutions. I have been living in Bad Waldsee, Germany, for a year
     now. Although I currently have a basic level of the language, I am studying
     and plan to reach the B1 level by the end of October. I am looking for a
-    company that offers me the opportunity to undergo dual training to
-    consolidate and expand my knowledge. If you want to know more about me, you
+    company that offers me the work opportunity to consolidate and expand my 
+    knowledge. If you want to know more about me, you
     can contact me through the form on the main page or via my social networks.
   </p>
 </section>
 <div class="skills">
   <label for="skills">Development Skills</label>
   <select name="" id="skills" onchange="mostrarInformacion()">
-    <option value="null"></option>
-    <option value="python" class="python" translate="no">Python</option>
+    <option value="null" class="null" translate="no"></option>
     <option value="django" class="django">Django</option>
     <option value="flask" class="flask" translate="no">Flask</option>
-    <option value="html" class="html">HTML and CSS Basic</option>
+    <option value="net" class="net" translate="no">.NET</option>
+    <option value="redis" class="redis" translate="no">Redis</option>
+    <option value="maui" class="maui" translate="no">.NET MAUI</option>
+    <option value="docker" class="docker" translate="no">Docker</option>
+    <option value="spring" class="spring" translate="no">SpringBoot</option>
+    <option value="html" class="html">HTML and CSS</option>
     <option value="sql-server" class="sql-server">SQL Server and MySQL</option>
-    <option value="power-platform" class="power-platform" translate="no">
-      Power Platform
-    </option>
+    <option value="azure-devops" class="azure-devops" translate="no">Azure Devops</option>
+    <option value="power-platform" class="power-platform" translate="no">Power Platform</option>
     <option value="uml" class="uml" translate="no">Star UML</option>
     <option value="canva" class="canva" translate="no">Canva</option>
+    <option value="figma" class="figma" translate="no">Figma</option>
   </select>
 </div>
 
@@ -48,7 +52,7 @@
     var seleccion = document.getElementById("skills").value;
     var informacionDiv = document.getElementById("info");
 
-    if (seleccion === "") {
+    if (seleccion == "") {
       informacionDiv.classList.remove("visible");
       informacionDiv.innerHTML = "python";
       return;
@@ -56,17 +60,13 @@
 
     var info;
     switch (seleccion) {
-      case "python":
-        info =
-          "I have knowledge of Python, a versatile and powerful programming language. I have developed web applications and automated scripts, and I continue to deepen my understanding, especially in backend development with Django and Flask.";
-        break;
       case "django":
         info =
-          "I am learning Django, a high-level web framework for Python. I have built structured applications, managed databases using Django ORM, and applied best practices in web architecture. Currently, I am exploring Django REST Framework (DRF) for API development.";
+        "I have built monolithic software including this web portfolio, I have the ability to build solutions following the MVC design pattern (Model, View, Controller) and I can also apply techniques with this framework such as web scraping, data analytics in Jupiter, diagram presentation with Streamlit, OOP (object-oriented programming) and structured programming."
         break;
       case "html":
         info =
-          "I have basic knowledge of HTML and CSS, allowing me to structure and design web pages. I am currently improving my skills in Bootstrap and Tailwind CSS to create more attractive and responsive interfaces.";
+        "My strong suit is not Frond, but I can program GUI graphical user interfaces with HTML and CSS, providing a pleasant and usable graphical experience. I can also program with Bootstrap and apply quality graphic designs."
         break;
       case "sql-server":
         info =
@@ -74,7 +74,7 @@
         break;
       case "flask":
         info =
-          "I have basic knowledge of Flask, a lightweight Python microframework for web development. It has helped me better understand how backend applications work and how to build web services.";
+        "For basic pages such as landing pages or static pages with very little interaction, I can build software with this framework by applying basic product modeling and design."
         break;
       case "power-platform":
         info =
@@ -88,8 +88,36 @@
         info =
           "I have experience with Canva, a graphic design tool that I use to create visually appealing content, such as presentations, infographics, and social media materials.";
         break;
+        case "net":
+        info =
+        "I can build applications following the Hexagonal design pattern with C#, I can apply code quality in each of the layers that make up this architecture, in addition to applying pagination and in-memory queries with Redis for greater performance.";
+        break;
+        case "spring":
+        info =
+        "I have a solid understanding of Microservices architecture using this framework. I have built microsystems implementing Eureka, config-server, and Gateway, along with the required microservices, applying design patterns, pagination, exposing Endpoints in a graphical interface using Swagger, and persistence with MySQL, SQLite, MongoDB, and SQL Server.";
+        break;
+        case "redis":
+        info =
+        "I have experience implementing this tool as a very good option for leveraging in-memory queries, which allows for extremely high performance across different transactions or database queries.";
+        break;
+        case "maui":
+        info =
+        "Although Frond is not my strong suit, I have the ability to build applications with this framework. Through MAUI with C#, I can consume the different endpoints to perform the operations required by the project. I have built interfaces, buttons, Loadings, Datespikers, and have also applied coherent and functional interface logic.";
+        break;
+        case "docker":
+        info =
+        "A modern, powerful technology for containing or encapsulating source code and ensuring a clean and functional deployment, I have knowledge of the different commands and processes for deployment with this technology.";
+        break;
+        case "azure-devops":
+        info =
+        "As a project manager, I have manipulated this platform, which allows for agility and organization in development, repository management, Scrum implementation and control, documentation, and tracking. These are some of the tools offered by this very useful and fascinating platform.";
+        break;
+        case "figma":
+        info =
+        "With this tool I have managed to make some basic but important designs that provide clarity when programming an interface. I have knowledge of the tool and my level of manipulation is basic.";
+        break;
       default:
-        info = "";
+        info = "Please Select a option.";
     }
 
     informacionDiv.classList.add("visible");
