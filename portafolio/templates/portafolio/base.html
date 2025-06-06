@@ -68,13 +68,20 @@
       </nav>
     </header>
     <main>{% block content %}{% endblock %}</main>
-    <div class="center-button">
-      <a href="{% static 'portafolio/HV dusch_v1.pdf' %}" target="_blank">
-        <button class="button" id="button">Download CV</button>
-      </a>
-    </div>
-    <br />
 
+    <div class="buttons-cv">
+      <div class="center-button">
+        <a href="{% static 'portafolio/HV dusch_v1.pdf' %}" target="_blank">
+          <button class="button" >CV in Deutsch</button>
+        </a>
+      </div>
+      <div class="center-button">
+        <a href="{% static 'portafolio/cv_spanisch.pdf' %}" target="_blank">
+          <button class="button">CV in Spanisch</button>
+        </a>
+      </div>
+    </div>
+    <br>
     <footer>
       <p>&copy; 2025, all rights reserved</p>
       <p>Developed by Ing. William Rodriguez</p>
