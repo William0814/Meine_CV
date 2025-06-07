@@ -327,6 +327,8 @@ label {
 .info {
   text-align: center;
   color: black;
+  font-size: 120px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 select {
@@ -346,6 +348,7 @@ select {
   text-align: center;
   border-radius: 5px;
   color: black;
+  font-size: 120px;
 }
 
 .info-box.visible {

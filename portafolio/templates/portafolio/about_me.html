@@ -46,7 +46,23 @@
 <div id="info" class="info"></div>
 <br />
 <br />
+<style>
+  #info {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    margin-top: 10px;
+  }
 
+  .visible {
+    display: block;
+  }
+
+  #info:not(.visible) {
+    display: none;
+  }
+</style>
 <script>
   function mostrarInformacion() {
     var seleccion = document.getElementById("skills").value;
@@ -57,6 +73,7 @@
       informacionDiv.innerHTML = "python";
       return;
     }
+  
 
     var info;
     switch (seleccion) {
@@ -66,7 +83,7 @@
         break;
       case "html":
         info =
-        "My strong suit is not Frond, but I can program GUI graphical user interfaces with HTML and CSS, providing a pleasant and usable graphical experience. I can also program with Bootstrap and apply quality graphic designs."
+        "I can program GUI graphical user interfaces with HTML and CSS, providing a pleasant and usable graphical experience. I can also program with Bootstrap and apply quality graphic designs."
         break;
       case "sql-server":
         info =
