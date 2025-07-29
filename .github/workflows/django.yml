@@ -12,9 +12,13 @@ jobs:
     
     steps:
       - uses: actions/checkout@v4
-      - name: 'Hello work'
-        run: echo "Hello work"
-      - name: Dime la fecha
-        run: date
+      - name: install
+        run: |
+          python -m venv env/
+          source env/bin/activate
+          python -m pip install .
+      - uses: pypa/gh-action-pip-audit@v1.1.0
+        with:
+          virtual-environment: env/
     
     
