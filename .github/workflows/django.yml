@@ -1,0 +1,17 @@
+name: Prueba con Django
+
+on:
+  push:
+    branches: [ "master" ]
+  
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 'Hello work'
+        run: print "Hello work"
+    
+    
