@@ -12,6 +12,6 @@ jobs:
     
     steps:
       - name: 'Hello work'
-        run: print "Hello work"
+        run: echo "Hello work"
     
     
