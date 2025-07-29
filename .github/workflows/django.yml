@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - uses: actions/checkpout@v4
       - name: 'Hello work'
         run: echo "Hello work"
       - name: Dime la fecha
